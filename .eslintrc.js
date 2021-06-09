@@ -24,6 +24,8 @@ module.exports = {
 					['@api', './src/api'],
 					['@style', './src/style'],
 					['@constant', './src/constant'],
+					['@pages', './src/pages'],
+					['@app', './src/app'],
 				],
 			},
 		},

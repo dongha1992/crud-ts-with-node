@@ -14,7 +14,10 @@
       "@api/*":["./src/api/*"],
       "@components/*":["./src/components/*"],
       "@constant/*":["./src/contants/*"],
-      "@style/*":["./src/style/*"]
+      "@style/*":["./src/style/*"],
+      "@pages/*":["./src/pages/*"],
+      "@app/*":["./src/app/*"]
+
     },
     "jsx": "react",  
     "esModuleInterop": true,  
@@ -26,6 +29,6 @@
     "moduleResolution": "node"
   },
   
-  "include": ["src","**/*.ts","**/*.tsx"],
+  "include": ["**/*.ts","**/*.tsx"],
   "exclude": ["node_modules"]
 }

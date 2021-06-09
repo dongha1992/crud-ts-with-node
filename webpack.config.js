@@ -12,6 +12,8 @@ const config = {
 			'@components': path.resolve(__dirname, './src/components'),
 			'@constant': path.resolve(__dirname, './src/constant'),
 			'@style': path.resolve(__dirname, './src/style'),
+			'@app': path.resolve(__dirname, './src/app'),
+			'@pages': path.resolve(__dirname, './src/pages'),
 		},
 	},
 	output: {
@@ -38,7 +40,7 @@ const config = {
 			},
 			{
 				test: /\.tsx?$/,
-				loader: 'awesome-typescript-loader',
+				loader: 'ts-loader',
 			},
 		],
 	},
