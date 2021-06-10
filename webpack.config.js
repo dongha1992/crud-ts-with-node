@@ -10,7 +10,7 @@ const config = {
 		alias: {
 			'@api': path.resolve(__dirname, './src/api'),
 			'@components': path.resolve(__dirname, './src/components'),
-			'@constant': path.resolve(__dirname, './src/constant'),
+			'@constants': path.resolve(__dirname, './src/constants'),
 			'@style': path.resolve(__dirname, './src/style'),
 			'@app': path.resolve(__dirname, './src/app'),
 			'@pages': path.resolve(__dirname, './src/pages'),

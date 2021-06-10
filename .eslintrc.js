@@ -23,7 +23,7 @@ module.exports = {
 					['@components', './src/components'],
 					['@api', './src/api'],
 					['@style', './src/style'],
-					['@constant', './src/constant'],
+					['@constants', './src/constants'],
 					['@pages', './src/pages'],
 					['@app', './src/app'],
 				],
@@ -33,11 +33,6 @@ module.exports = {
 	plugins: ['react', '@typescript-eslint'],
 	rules: {
 		'react/jsx-filename-extension': [1, { extensions: ['.tsx'] }],
-		'import/extensions': [
-			'error',
-			'ignorePackages',
-			{ js: 'never', jsx: 'never', ts: 'never', tsx: 'never', json: 'never' },
-		],
 		'react/jsx-indent': [2, 'tab'],
 		'react/jsx-indent-props': [2, 'tab'],
 	},

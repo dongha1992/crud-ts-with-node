@@ -13,7 +13,7 @@
     "paths":{
       "@api/*":["./src/api/*"],
       "@components/*":["./src/components/*"],
-      "@constant/*":["./src/contants/*"],
+      "@constants/*":["./src/constants/*"],
       "@style/*":["./src/style/*"],
       "@pages/*":["./src/pages/*"],
       "@app/*":["./src/app/*"]
@@ -26,7 +26,9 @@
     "sourceMap": true,
     "strict": true,
     "resolveJsonModule": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "suppressImplicitAnyIndexErrors": true
   },
   
   "include": ["**/*.ts","**/*.tsx"],
