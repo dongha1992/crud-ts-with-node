@@ -5,11 +5,11 @@ import { Loading } from '@components/Loading';
 import { Routes } from './routes';
 
 export const App: React.FC = () => {
-	return (
-		<Router>
-			<Suspense fallback={<Loading />}>
-				<Routes />
-			</Suspense>
-		</Router>
-	);
+  return (
+    <Router>
+      <Suspense fallback={<Loading />}>
+        <Routes />
+      </Suspense>
+    </Router>
+  );
 };
