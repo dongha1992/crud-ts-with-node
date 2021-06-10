@@ -1,6 +1,8 @@
 import React from 'react';
+import { PostItem } from '@components/PostItem';
+import styled from 'styled-components';
 
-interface IPostLists {
+export interface IPostLists {
 	userId: number;
 	id: number;
 	title: string;
@@ -12,6 +14,13 @@ interface IPostListsProps {
 }
 
 export const PostList: React.FC<IPostListsProps> = ({ postLists }) => {
-	console.log(postLists);
-	return <div>dd</div>;
+	return (
+		<Container>
+			{postLists.map((item) => (
+				<PostItem item={item} key={item.id} />
+			))}
+		</Container>
+	);
 };
+
+const Container = styled.div``;

@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+  
     "allowJs": true,
     "lib": [
       "es5", 
@@ -31,6 +32,6 @@
     "suppressImplicitAnyIndexErrors": true
   },
   
-  "include": ["**/*.ts","**/*.tsx"],
+  "include": [ "**/*.ts", "**/*.tsx","custom.d.ts"],
   "exclude": ["node_modules"]
 }

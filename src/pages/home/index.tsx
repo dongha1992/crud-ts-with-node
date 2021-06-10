@@ -28,4 +28,8 @@ export const Home: React.FC = () => {
 
 export default Home;
 
-const Container = styled.div``;
+const Container = styled.div`
+display: flex;
+align-items: center;
+justify-content: center;
+`;

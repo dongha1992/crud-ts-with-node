@@ -32,14 +32,15 @@ const config = {
 				use: [{ loader: 'style-loader' }, { loader: 'css-loader' }],
 			},
 			{
-				test: /\.jfif$/,
+				test: /\.(png|svg|jpg|jpeg|gif)$/i,
 				loader: 'file-loader',
 				options: {
-					name: '[name].[ext]',
+					name: 'asset/img/[name].[ext]?[hash]',
 				},
 			},
+
 			{
-				test: /\.tsx?$/,
+				test: /\.(tsx|ts)$/,
 				loader: 'ts-loader',
 			},
 		],
@@ -47,10 +48,10 @@ const config = {
 	devServer: {
 		contentBase: path.join(__dirname, 'dist'),
 		historyApiFallback: true,
+		compress: true,
 		inline: true,
 		port: 8080,
 		hot: true,
-		publicPath: '/',
 	},
 
 	plugins: [
