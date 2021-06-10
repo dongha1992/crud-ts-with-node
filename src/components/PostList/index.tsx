@@ -2,7 +2,7 @@ import React from 'react';
 import { PostItem } from '@components/PostItem';
 import styled from 'styled-components';
 
-interface IPostItem {
+export interface IPostItem {
 	userId: number;
 	id: number;
 	title: string;
