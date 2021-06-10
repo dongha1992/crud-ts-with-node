@@ -2,22 +2,28 @@ import React from 'react';
 import { PostItem } from '@components/PostItem';
 import styled from 'styled-components';
 
-export interface IPostLists {
+interface IPostItem {
 	userId: number;
 	id: number;
 	title: string;
 	body: string;
 }
 
-interface IPostListsProps {
-	postLists: IPostLists[];
+export interface IPostLists {
+	item: IPostItem;
+	onClick: (id: number) => void;
 }
 
-export const PostList: React.FC<IPostListsProps> = ({ postLists }) => {
+interface IPostListsProps {
+	postLists: IPostItem[];
+	onClick: (id: number) => void;
+}
+
+export const PostList: React.FC<IPostListsProps> = ({ postLists, onClick }) => {
 	return (
 		<Container>
 			{postLists.map((item) => (
-				<PostItem item={item} key={item.id} />
+				<PostItem item={item} key={item.id} onClick={onClick} />
 			))}
 		</Container>
 	);

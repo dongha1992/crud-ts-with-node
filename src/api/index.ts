@@ -42,4 +42,5 @@ const _put = (url: string, data: any[]) => _sendRequestForData(url, data, 'put')
 
 export const api = {
 	getAllPosts: () => _get('/posts'),
+	getPostItemDetail: (id: number) => _get(`/posts/${id}`),
 };

@@ -1,14 +1,19 @@
 import React from 'react';
 import { IPostLists } from '@components/PostList';
+
 import styled from 'styled-components';
 import splash from '../../constants/images/splash.jpeg';
 
-export const PostItem: React.FC<{ item: IPostLists }> = ({ item }) => {
+export const PostItem = ({ item, onClick }: IPostLists) => {
 	return (
-		<Container>
+		<Container
+			onClick={() => {
+				onClick(item.id);
+			}}
+		>
 			<Left>
 				<Image src={splash} alt="img" />
-				<Title>{item.title}</Title>
+				<Title>제목: {item.title.length > 50 ? item.title.slice(0, 50) + '...' : item.title}</Title>
 			</Left>
 			<Right>
 				<div>{item.id}</div>
