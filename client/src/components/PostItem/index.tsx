@@ -13,6 +13,7 @@ export const PostItem = ({ item, onClick }: IPostLists) => {
     >
       <Left>
         <Image src={splash} alt="img" />
+
         <Title>
           제목:
           {item.title.length > 50

@@ -14,12 +14,8 @@ export const Home: React.FC = () => {
   }, []);
 
   const getPost = async () => {
-    const res = await api.getAllPosts();
     const test = await api.testApi();
     console.log(test);
-    if (res) {
-      setPostLists(res);
-    }
   };
 
   const goToDetail = (id: number) => {

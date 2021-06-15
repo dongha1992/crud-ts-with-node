@@ -12,6 +12,7 @@ const _sendRequest = async (url: string, method: string, params?: any[]) => {
       headers: headers,
       params,
     });
+    console.log(res, 'res client');
 
     if (res.status === 200) {
       return res.data;
@@ -48,7 +49,5 @@ const _put = (url: string, data: any[]) =>
   _sendRequestForData(url, data, 'put');
 
 export const api = {
-  getAllPosts: () => _get('/posts'),
-  getPostItemDetail: (id: number) => _get(`/posts/${id}`),
-  testApi: () => _get('/'),
+  testApi: () => _get('/albums'),
 };

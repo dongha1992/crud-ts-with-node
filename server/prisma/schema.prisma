@@ -1,6 +1,5 @@
 generator client {
-  provider        = "prisma-client-js"
-
+  provider = "prisma-client-js"
 }
 
 datasource db {
@@ -22,6 +21,7 @@ model album_list {
 model track_list {
   id           Int        @id @default(autoincrement())
   album_id     Int
+  title        String     @db.VarChar(255)
   track_url    String     @db.VarChar(255)
   release_date DateTime?  @default(now()) @db.DateTime(0)
   album_list   album_list @relation(fields: [album_id], references: [id])

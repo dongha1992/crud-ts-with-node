@@ -1,6 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-console.log('routes access');
+const AlbumRouter = require('./AlbumRouter');
+
+router.use('/albums', AlbumRouter);
 
 module.exports = router;

@@ -5,4 +5,4 @@ const { AlbumController } = require('../controllers');
 
 router.get('/', AlbumController.getAllAlbums);
 
-module.export = router;
+module.exports = router;

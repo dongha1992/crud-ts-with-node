@@ -12,10 +12,6 @@ export const PostDetail: React.FC = ({ match }: any) => {
 
   const getDetail = async () => {
     const { id } = match.params;
-    const res = await api.getPostItemDetail(id);
-    if (res) {
-      setPost(res);
-    }
   };
   if (!Object.keys(post).length) return <Loading />;
 
