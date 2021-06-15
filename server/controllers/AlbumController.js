@@ -1,8 +1,14 @@
 const { AlbumService } = require('../services');
+const { errorGenerator, errorWrapper } = require('../errors');
 
-const getAllAlbums = async (req, res) => {
+const getAllAlbums = errorWrapper(async (req, res) => {
   const foundAlbums = await AlbumService.findAllAlbums();
-  console.log(foundAlbums);
-};
+  if (!foundAlbums) {
+    errorGenerator({ message: 'Not Found', statusCode: 400 });
+    return;
+  }
+  res.status(200).json(foundAlbums);
+  res.json({ message: 'success' });
+});
 
 module.exports = { getAllAlbums };

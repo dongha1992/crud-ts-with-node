@@ -12,7 +12,6 @@ const _sendRequest = async (url: string, method: string, params?: any[]) => {
       headers: headers,
       params,
     });
-    console.log(res, 'res client');
 
     if (res.status === 200) {
       return res.data;
@@ -49,5 +48,5 @@ const _put = (url: string, data: any[]) =>
   _sendRequestForData(url, data, 'put');
 
 export const api = {
-  testApi: () => _get('/albums'),
+  getAllAlbum: () => _get('/albums'),
 };

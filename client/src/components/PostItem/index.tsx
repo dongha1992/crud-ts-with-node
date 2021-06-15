@@ -16,9 +16,9 @@ export const PostItem = ({ item, onClick }: IPostLists) => {
 
         <Title>
           제목:
-          {item.title.length > 50
-            ? item.title.slice(0, 50) + '...'
-            : item.title}
+          {item.album.length > 50
+            ? item.album.slice(0, 50) + '...'
+            : item.album}
         </Title>
       </Left>
       <Right>

@@ -3,10 +3,14 @@ import { PostItem } from '@components/PostItem';
 import styled from 'styled-components';
 
 export interface IPostItem {
-  userId: number;
   id: number;
-  title: string;
-  body: string;
+  artist: string;
+  cover_url: string;
+  album: string;
+  release_date: string;
+  gerne: string;
+  agency: string;
+  track_list: string[];
 }
 
 export interface IPostLists {
