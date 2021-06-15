@@ -8,13 +8,15 @@ import { useHistory } from 'react-router-dom';
 export const Home: React.FC = () => {
   const [postLists, setPostLists] = useState([]);
   const history = useHistory();
-  console.log(history);
+
   useEffect(() => {
     getPost();
   }, []);
 
   const getPost = async () => {
     const res = await api.getAllPosts();
+    const test = await api.testApi();
+    console.log(test);
     if (res) {
       setPostLists(res);
     }

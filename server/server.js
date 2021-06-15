@@ -4,7 +4,7 @@ const { PORT } = process.env;
 const http = require('http');
 const app = require('./app');
 const server = http.createServer(app);
-// const prisma = require('./prisma');
+const prisma = require('./prisma');
 
 const start = async () => {
   try {
@@ -12,7 +12,7 @@ const start = async () => {
   } catch (error) {
     console.log(error);
   } finally {
-    // await prisma.$disconnect();
+    await prisma.$disconnect();
   }
 };
 start();

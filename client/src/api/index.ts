@@ -50,4 +50,5 @@ const _put = (url: string, data: any[]) =>
 export const api = {
   getAllPosts: () => _get('/posts'),
   getPostItemDetail: (id: number) => _get(`/posts/${id}`),
+  testApi: () => _get('/'),
 };

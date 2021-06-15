@@ -1,0 +1,30 @@
+generator client {
+  provider        = "prisma-client-js"
+
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model album_list {
+  id           Int          @id @default(autoincrement())
+  artist       String       @db.VarChar(100)
+  cover_url    String       @db.VarChar(255)
+  album        String       @db.VarChar(100)
+  release_date DateTime?    @default(now()) @db.DateTime(0)
+  gerne        String       @db.VarChar(100)
+  agency       String       @db.VarChar(100)
+  track_list   track_list[]
+}
+
+model track_list {
+  id           Int        @id @default(autoincrement())
+  album_id     Int
+  track_url    String     @db.VarChar(255)
+  release_date DateTime?  @default(now()) @db.DateTime(0)
+  album_list   album_list @relation(fields: [album_id], references: [id])
+
+  @@index([album_id], name: "album_id")
+}
