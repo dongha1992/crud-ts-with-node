@@ -1,8 +1,7 @@
 import React from 'react';
 import { IPostLists } from '@components/PostList';
-
+import { dayFormatter } from '@utils/dayFormatter';
 import styled from 'styled-components';
-import splash from '../../constants/images/splash.jpeg';
 
 export const PostItem = ({ item, onClick }: IPostLists) => {
   return (
@@ -12,17 +11,14 @@ export const PostItem = ({ item, onClick }: IPostLists) => {
       }}
     >
       <Left>
-        <Image src={splash} alt="img" />
-
-        <Title>
-          제목:
-          {item.album.length > 50
-            ? item.album.slice(0, 50) + '...'
-            : item.album}
-        </Title>
+        <ImageWrapper>
+          <Image src={item.cover_url} alt="img" />
+        </ImageWrapper>
+        <Title>{item.album}</Title>
       </Left>
       <Right>
-        <div>{item.id}</div>
+        <div>{item.artist}</div>
+        <div>{dayFormatter(item.release_date)}</div>
       </Right>
     </Container>
   );
@@ -39,9 +35,15 @@ const Left = styled.div`
 `;
 const Title = styled.div`
   margin-left: 10px;
+  width: 200px;
 `;
-const Image = styled.img`
+
+const ImageWrapper = styled.div`
   width: 100px;
   height: 100px;
+`;
+const Image = styled.img`
+  width: 100%;
+  object-fit: fill;
 `;
 const Right = styled.div``;

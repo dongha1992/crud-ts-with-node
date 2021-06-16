@@ -49,4 +49,5 @@ const _put = (url: string, data: any[]) =>
 
 export const api = {
   getAllAlbum: () => _get('/albums'),
+  getAlbumDetail: (id: number) => _get(`/albums/${id}`),
 };

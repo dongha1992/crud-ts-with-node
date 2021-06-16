@@ -12,6 +12,8 @@ export const PostDetail: React.FC = ({ match }: any) => {
 
   const getDetail = async () => {
     const { id } = match.params;
+    const res = await api.getAlbumDetail(id);
+    console.log(res);
   };
   if (!Object.keys(post).length) return <Loading />;
 

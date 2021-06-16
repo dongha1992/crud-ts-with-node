@@ -14,6 +14,7 @@ const config = {
       '@style': path.resolve(__dirname, './src/style'),
       '@app': path.resolve(__dirname, './src/app'),
       '@pages': path.resolve(__dirname, './src/pages'),
+      '@utils': path.resolve(__dirname, './src/utils'),
     },
   },
   output: {

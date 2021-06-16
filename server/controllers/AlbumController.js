@@ -11,4 +11,14 @@ const getAllAlbums = errorWrapper(async (req, res) => {
   res.json({ message: 'success' });
 });
 
-module.exports = { getAllAlbums };
+const getAlbumDetail = errorWrapper(async (req, res) => {
+  const foundAlbums = await AlbumService.findAlbum();
+  if (!foundAlbums) {
+    errorGenerator({ message: 'Not Found', statusCode: 400 });
+    return;
+  }
+  res.status(200).json(foundAlbums);
+  res.json({ message: 'success' });
+});
+
+module.exports = { getAllAlbums, getAlbumDetail };

@@ -17,7 +17,9 @@
       "@constants/*":["./src/constants/*"],
       "@style/*":["./src/style/*"],
       "@pages/*":["./src/pages/*"],
-      "@app/*":["./src/app/*"]
+      "@app/*":["./src/app/*"],
+      "@utils/*":["./src/utils/*"]
+
 
     },
     "jsx": "react",  
