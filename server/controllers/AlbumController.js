@@ -12,12 +12,14 @@ const getAllAlbums = errorWrapper(async (req, res) => {
 });
 
 const getAlbumDetail = errorWrapper(async (req, res) => {
-  const foundAlbums = await AlbumService.findAlbum();
-  if (!foundAlbums) {
+  const { id } = req.params;
+  const foundAlbum = await AlbumService.findAlbum(id);
+  if (!foundAlbum) {
     errorGenerator({ message: 'Not Found', statusCode: 400 });
     return;
   }
-  res.status(200).json(foundAlbums);
+
+  res.status(200).json(foundAlbum);
   res.json({ message: 'success' });
 });
 

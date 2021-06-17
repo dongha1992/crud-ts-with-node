@@ -18,7 +18,7 @@ export const PostItem = ({ item, onClick }: IPostLists) => {
       </Left>
       <Right>
         <div>{item.artist}</div>
-        <div>{dayFormatter(item.release_date)}</div>
+        <ReleaseDate>{dayFormatter(item.release_date)}</ReleaseDate>
       </Right>
     </Container>
   );
@@ -46,4 +46,8 @@ const Image = styled.img`
   width: 100%;
   object-fit: fill;
 `;
+
 const Right = styled.div``;
+const ReleaseDate = styled.div`
+  margin-top: 5px;
+`;

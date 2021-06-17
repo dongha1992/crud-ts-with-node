@@ -11,4 +11,6 @@ body {
 
 * {
   box-sizing: border-box;
-}`;
+}
+button{  border: none};
+`;
