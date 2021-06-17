@@ -1,0 +1,30 @@
+service: music-front-task
+plugins:
+  - serverless-dotenv-plugin
+
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  region: ap-northeast-2
+  memorySize: 128
+  role: arn:aws:iam::495116136469:role/lambda-vpc-role
+  vpc:
+    securityGroupIds:
+      - sg-03bf83abc874aead7
+    subnetIds:
+      - subnet-8d4ce3e6
+
+functions:
+  music-front-task:
+    handler: handler.lambda_handler # handler.js 에서 작성한 Lambda 핸들러를 붙여줍니다.
+    events:
+      - http:
+          path: /
+          method: get
+          cors: true
+      - http:
+          path: /{proxy+}
+          method: any
+          cors: true

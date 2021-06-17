@@ -4,10 +4,10 @@ const routes = require('./routes');
 const logger = require('morgan')('dev');
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 app.use(logger);
 
-app.use(cors());
 app.use(routes);
 
 app.use((err, req, res, next) => {

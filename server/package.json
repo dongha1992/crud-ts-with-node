@@ -10,8 +10,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "aws-serverless-express": "^3.4.0",
     "prisma": "^2.24.1",
-    "serverless": "^2.46.0"
+    "serverless": "^2.46.0",
+    "serverless-dotenv-plugin": "^3.9.0"
   },
   "dependencies": {
     "@prisma/client": "^2.24.1",
